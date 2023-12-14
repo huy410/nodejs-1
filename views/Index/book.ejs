@@ -1,0 +1,46 @@
+<%- include("../Header"); -%>
+<html>
+    <body>
+        <a style="text-align: left;" href="/create/book">New Book</a>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Describe</th>
+                <th scope="col">Category</th>
+                <th scope="col">Quanlity</th>
+                <th scope="col">BookImage</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% Books.forEach(function(book){%>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><%- book.name %></td>
+                        <td><%- book.price %></td>
+                        <td style="width:500px;"><%- book.describe %></td>
+                        <td><%- book.categoryId %></td>
+                        <td><%- book.quanlity %></td>
+                        <td><img style="width:100px;height: 100px;" src="http://localhost:5000/upload/<%- book.image %>"/></td>
+                        <td>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <a href="/edit/book">Edit</a>
+                            </div>
+                            <div class="col-md-6">
+                              <a href="/delete/book/<%- book._id %>">Delete</a>
+                            </div>
+                          </div>
+                          
+                        </td>
+                      </tr>
+                <%});%>
+              
+            
+            </tbody>
+          </table>
+    </body>
+</html>

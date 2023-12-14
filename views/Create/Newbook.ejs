@@ -1,0 +1,27 @@
+<%- include("../Header"); -%>
+<html lang="en">
+<head>
+<title>Page Book</title>
+</head>
+<body>
+    <h1>Create New Book</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input type="text" name="txtName" placeholder="Name Book "/>
+        <input type="text" name="txtPrice" placeholder="Price "/>
+        <input type="text" name="txtDescribe" placeholder="Describe "/>
+        <input type="text" name="txtAuthor" placeholder="Autor "/>
+        <input type="text" name="txtQuanlity" placeholder="Quanlity "/>
+        <input type="date" name="txtDate" placeholder="Date "/>
+        <select name="selectCate">
+            <% Cates.forEach(function(cate){%>
+                <option value="<%- cate._id  %>">
+                    <%- cate.name %>
+                </option>
+            <%});%>
+        </select>
+        <input type="file" name="BookImage"/>
+        <input type="text" name="txtFile" placeholder="File"/>
+        <input type="submit" value="Add"/>
+    </form>
+</body>
+</html>
